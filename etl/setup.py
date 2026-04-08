@@ -24,7 +24,7 @@ def setup():
                     WHERE datname = '{{ params.database }}';
                 """,
                 params={'database': database},
-                follow_task_ids_if_true=[],
+                follow_task_ids_if_true=[f'{group}.exists'],
                 follow_task_ids_id_false=[f'{group}.create']
             )
 
