@@ -25,7 +25,7 @@ def setup():
                 """,
                 params={'database': database},
                 follow_task_ids_if_true=[f'{group}.exists'],
-                follow_task_ids_id_false=[f'{group}.create']
+                follow_task_ids_if_false=[f'{group}.create']
             )
 
             create = SQLExecuteQueryOperator(
